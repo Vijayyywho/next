@@ -1,6 +1,8 @@
 import BlogPostCrad from "@/components/general/BlogPostCrad";
 import { prisma } from "./utils/db";
 
+export const revalidate = 60;
+
 async function getData() {
   const data = await prisma.blogPost.findMany({
     select: {
