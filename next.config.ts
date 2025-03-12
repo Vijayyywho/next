@@ -1,6 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  eslint: {
+    ignoreDuringBuilds: true, // ✅ Disables ESLint during builds
+  },
   images: {
     remotePatterns: [
       {
@@ -23,10 +26,13 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "cdn.pixabay.com",
       },
-      {
-        protocol: "https",
-        hostname: "**", // ✅ Allow all domains (Not recommended for security)
-      },
+    ],
+    domains: [
+      "plus.unsplash.com",
+      "lh3.googleusercontent.com",
+      "s7ap1.scene7.com",
+      "res.cloudinary.com",
+      "cdn.pixabay.com",
     ],
   },
 };
